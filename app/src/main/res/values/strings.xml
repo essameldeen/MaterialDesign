@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="setting">Setting</string>
+    <string name="about_us">About Us</string>
+    <string name="users">Users</string>
+    <string name="name">Essam mohamed</string>
+    <string name="send_email">Send Email</string>
+    <string name="inbox">Inbox</string>
+    <string name="starred">Starred</string>
+    <string name="draft">Draft</string>
+    <string name="advance_options">Advance Options</string>
+    <string name="all_email">All Emails</string>
+    <string name="trash">Trash</string>
+    <string name="spam">Spam</string>
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+</resources>

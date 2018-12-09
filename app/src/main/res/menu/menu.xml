@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/setting"
+        android:title="@string/setting"></item>
+    <item
+        android:id="@+id/aboutUS"
+        android:title="@string/about_us">
+
+    </item>
+    <item
+        android:id="@+id/user"
+        android:title="@string/users"></item>
+
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/search_icon"
+        android:title=""
+        app:showAsAction="ifRoom"></item>
+    <item
+        android:id="@+id/card"
+        android:icon="@drawable/card_icon"
+        android:title=""
+        app:showAsAction="ifRoom"></item>
+
+</menu>
