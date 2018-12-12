@@ -2,9 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/body"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/body"
     android:focusable="true"
     android:focusableInTouchMode="true"
     tools:context=".MainActivity">
@@ -21,16 +21,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
+        android:layout_margin="32dp"
         app:counterEnabled="true"
-        app:counterMaxLength="12"
-        android:layout_margin="32dp">
+        app:counterMaxLength="12">
 
         <android.support.v7.widget.AppCompatEditText
             android:id="@+id/user_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="username*"
-            android:inputType="text" /><requestFocus></requestFocus>
+            android:inputType="text" />
+
+        <requestFocus></requestFocus>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -53,4 +55,66 @@
             android:inputType="textPassword" />
 
     </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/login"
+        style="@style/RasidButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password_textInputLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:onClick="logIn"
+        android:text="LOG IN" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/forget"
+        style="@style/flatButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:onClick="forgetPassword"
+        android:text="Forget" />
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/floating_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        app:menu_backgroundColor="@android:color/transparent"
+        app:menu_fab_label=""
+        app:menu_labels_colorNormal="@color/background"
+        app:menu_labels_colorPressed="@color/colorAccent"
+        app:menu_labels_textColor="@color/textColor"
+        app:menu_openDirection="up"
+        app:menu_showShadow="true"
+
+
+        >
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/floating_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="imageFloating"
+            android:src="@drawable/image_icon"
+            app:fab_label="Image" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/floating_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/edit_icon"
+            android:onClick="editFloating"
+            app:fab_label="Edit" />
+
+
+    </com.github.clans.fab.FloatingActionMenu>
+
 </RelativeLayout>

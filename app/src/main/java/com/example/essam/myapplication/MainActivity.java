@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -17,6 +18,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -30,26 +34,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     AppCompatEditText userName;
     AppCompatEditText password;
 
+    AppCompatButton btn_login;
+    AppCompatButton btn_forget;
+
+    FloatingActionMenu actionMenu;
+    FloatingActionButton edit, image;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.navigation_drawer);
+        initView();
 
-        userNameLayout = (TextInputLayout) findViewById(R.id.user_name_textInputLayout);
-        passwordLayout = (TextInputLayout) findViewById(R.id.password_textInputLayout);
-
-        userName = (AppCompatEditText) findViewById(R.id.user_name);
-        password = (AppCompatEditText) findViewById(R.id.password);
-
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        drawerLayout = (DrawerLayout) findViewById(R.id.nav_drawer);
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
-        body = (RelativeLayout) findViewById(R.id.body);
-        body.setOnClickListener(null);
-
-        navigationView.setNavigationItemSelectedListener(this);
-        setSupportActionBar(toolbar);
-        setTitle("Material Design");
 
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_drawer, R.string.close_drawer);
 
@@ -127,6 +124,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
+    private void initView() {
+
+        actionMenu = (FloatingActionMenu) findViewById(R.id.floating_menu);
+        image = (FloatingActionButton) findViewById(R.id.floating_image);
+        edit = (FloatingActionButton) findViewById(R.id.floating_edit);
+
+        btn_forget = (AppCompatButton) findViewById(R.id.forget);
+        btn_login = (AppCompatButton) findViewById(R.id.login);
+        userNameLayout = (TextInputLayout) findViewById(R.id.user_name_textInputLayout);
+        passwordLayout = (TextInputLayout) findViewById(R.id.password_textInputLayout);
+
+        userName = (AppCompatEditText) findViewById(R.id.user_name);
+        password = (AppCompatEditText) findViewById(R.id.password);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        drawerLayout = (DrawerLayout) findViewById(R.id.nav_drawer);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        body = (RelativeLayout) findViewById(R.id.body);
+        body.setOnClickListener(null);
+
+        navigationView.setNavigationItemSelectedListener(this);
+        setSupportActionBar(toolbar);
+        setTitle("Material Design");
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -202,5 +225,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             drawerLayout.closeDrawer(GravityCompat.START);
         } else
             super.onBackPressed();
+    }
+
+    public void logIn(View view) {
+        Toast.makeText(this, "LOG IN FUNCTION", Toast.LENGTH_SHORT).show();
+
+    }
+
+    public void forgetPassword(View view) {
+        Toast.makeText(this, "FORGET FUNCTION", Toast.LENGTH_SHORT).show();
+    }
+
+
+    public void imageFloating(View view) {
+        Toast.makeText(this, "Image Floating button", Toast.LENGTH_SHORT).show();
+    }
+
+    public void editFloating(View view) {
+        Toast.makeText(this, "Edit Floating button", Toast.LENGTH_SHORT).show();
+
     }
 }

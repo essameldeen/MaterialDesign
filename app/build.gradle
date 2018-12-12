@@ -28,4 +28,7 @@ dependencies {
     // circle image View
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.android.support:design:28.0.0'
+
+    // floating action with menu
+    compile 'com.github.clans:fab:1.6.4'
 }
